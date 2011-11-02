@@ -1,0 +1,53 @@
+Name:		texlive-gmiflink
+Version:	v0.97
+Release:	1
+Summary:	Simplify usage of \hypertarget and \hyperlink
+Group:		Publishing
+URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/gmiflink
+License:	LPPL
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gmiflink.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gmiflink.doc.tar.xz
+BuildArch:	noarch
+BuildRequires:	texlive-tlpkg
+Requires(post):	texlive-tlpkg
+Conflicts:	texlive-texmf <= 20110705-3
+Conflicts:	texlive-doc <= 20110705-3
+
+%description
+Three hyperref-based macros that simplify usage of \hypertarget
+and \hyperlink: one argument instead of the same one twice.
+Also \gmiflink and \gmifref which typeset plain text instead of
+generating an error or printing '??' if there is no respective
+hypertarget or label.
+
+%pre
+    %_texmf_mktexlsr_pre
+
+%post
+    %_texmf_mktexlsr_post
+
+%preun
+    if [ $1 -eq 0 ]; then
+	%_texmf_mktexlsr_pre
+    fi
+
+%postun
+    if [ $1 -eq 0 ]; then
+	%_texmf_mktexlsr_post
+    fi
+
+#-----------------------------------------------------------------------
+%files
+%{_texmfdistdir}/tex/latex/gmiflink/gmiflink.sty
+%doc %{_texmfdistdir}/doc/latex/gmiflink/README
+%doc %{_texmfdistdir}/doc/latex/gmiflink/gmiflink.pdf
+
+#-----------------------------------------------------------------------
+%prep
+%setup -c -a0 -a1
+
+%build
+
+%install
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar tex doc %{buildroot}%{_texmfdistdir}
