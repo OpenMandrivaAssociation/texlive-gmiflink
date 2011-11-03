@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/gmiflink
+# catalog-date 2008-08-13 17:41:00 +0200
+# catalog-license lppl
+# catalog-version v0.97
 Name:		texlive-gmiflink
 Version:	v0.97
 Release:	1
@@ -41,6 +47,7 @@ hypertarget or label.
 %{_texmfdistdir}/tex/latex/gmiflink/gmiflink.sty
 %doc %{_texmfdistdir}/doc/latex/gmiflink/README
 %doc %{_texmfdistdir}/doc/latex/gmiflink/gmiflink.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -51,3 +58,5 @@ hypertarget or label.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
