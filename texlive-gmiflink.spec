@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 Three hyperref-based macros that simplify usage of \hypertarget
@@ -27,20 +25,12 @@ Also \gmiflink and \gmifref which typeset plain text instead of
 generating an error or printing '??' if there is no respective
 hypertarget or label.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -48,7 +38,6 @@ hypertarget or label.
 %{_texmfdistdir}/tex/latex/gmiflink/gmiflink.sty
 %doc %{_texmfdistdir}/doc/latex/gmiflink/README
 %doc %{_texmfdistdir}/doc/latex/gmiflink/gmiflink.pdf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -59,5 +48,3 @@ hypertarget or label.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
