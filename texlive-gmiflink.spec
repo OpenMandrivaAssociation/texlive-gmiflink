@@ -6,7 +6,7 @@
 # catalog-version v0.97
 Name:		texlive-gmiflink
 Version:	v0.97
-Release:	5
+Release:	6
 Summary:	Simplify usage of \hypertarget and \hyperlink
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/gmiflink
