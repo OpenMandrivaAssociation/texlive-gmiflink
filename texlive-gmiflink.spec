@@ -1,12 +1,6 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/latex/contrib/gmiflink
-# catalog-date 2008-08-13 17:41:00 +0200
-# catalog-license lppl
-# catalog-version v0.97
 Name:		texlive-gmiflink
-Version:	v0.97
-Release:	10
+Version:	0.97
+Release:	1
 Summary:	Simplify usage of \hypertarget and \hyperlink
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/gmiflink
@@ -48,17 +42,3 @@ hypertarget or label.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> v0.97-2
-+ Revision: 752360
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> v0.97-1
-+ Revision: 718565
-- texlive-gmiflink
-- texlive-gmiflink
-- texlive-gmiflink
-- texlive-gmiflink
-
