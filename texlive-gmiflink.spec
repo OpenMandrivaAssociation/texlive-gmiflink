@@ -1,6 +1,6 @@
 Name:		texlive-gmiflink
 Version:	15878
-Release:	1
+Release:	2
 Summary:	Simplify usage of \hypertarget and \hyperlink
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/gmiflink
