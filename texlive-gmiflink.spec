@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Simplify usage of \hypertarget and \hyperlink
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/gmiflink
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/gmiflink
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gmiflink.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gmiflink.doc.r%{version}.tar.xz
